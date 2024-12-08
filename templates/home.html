@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+
+{% block main %}
+
+<form action="{{ url_for('result') }}" method="POST">
+<div class="div">
+    <h3>Населений пункт</h3>
+    <input type="text" name="place">
+</div>
+<br>
+<div class="div">
+    <h3>Температура (°C)</h3>
+    <p>Введіть інформацію про зміну температури за останні 5 років</p>
+    <input name="maxTempNow" type="number" placeholder="Максимальна температура за {{ year }}" style="width: 300px"><br>
+    <input name="minTempNow" type="number" placeholder="Мінімальна температура за {{ year }}" style="width: 300px"><br>
+    <br>
+    <input name="maxTempLast1Year" type="number" placeholder="Максимальна температура за {{ year - 1 }}" style="width: 300px"><br>
+    <input name="minTempLast1Year" type="number" placeholder="Мінімальна температура за {{ year - 1 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxTempLast2Year" type="number" placeholder="Максимальна температура за {{ year - 2 }}" style="width: 300px"><br>
+    <input name="minTempLast2Year" type="number" placeholder="Мінімальна температура за {{ year - 2 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxTempLast3Year" type="number" placeholder="Максимальна температура за {{ year - 3 }}" style="width: 300px"><br>
+    <input name="minTempLast3Year" type="number" placeholder="Мінімальна температура за {{ year - 3 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxTempLast4Year" type="number" placeholder="Максимальна температура за {{ year - 4 }}" style="width: 300px"><br>
+    <input name="minTempLast4Year" type="number" placeholder="Мінімальна температура за {{ year - 4 }}" style="width: 300px">
+</div>
+<br>
+<div class="div">
+    <h3>Волога (%)</h3>
+    <p>Введіть інформацію про зміну вологи за останні 5 років</p>
+    <input name="maxMoistureNow" type="number" min="0" placeholder="Максимальна волога за {{ year }}" style="width: 300px"><br>
+    <input name="minMoistureNow" type="number" min="0" placeholder="Мінімальна волога за {{ year }}" style="width: 300px"><br>
+    <br>
+    <input name="maxMoistureLast1Year" type="number" min="0" placeholder="Максимальна волога за {{ year - 1 }}" style="width: 300px"><br>
+    <input name="minMoistureLast1Year" type="number" min="0" placeholder="Мінімальна волога за {{ year - 1 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxMoistureLast2Year" type="number" min="0" placeholder="Максимальна волога за {{ year - 2 }}" style="width: 300px"><br>
+    <input name="minMoistureLast2Year" type="number" min="0" placeholder="Мінімальна волога за {{ year - 2 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxMoistureLast3Year" type="number" min="0" placeholder="Максимальна волога за {{ year - 3 }}" style="width: 300px"><br>
+    <input name="minMoistureLast3Year" type="number" min="0" placeholder="Мінімальна волога за {{ year - 3 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxMoistureLast4Year" type="number" min="0" placeholder="Максимальна волога за {{ year - 4 }}" style="width: 300px"><br>
+    <input name="minMoistureLast4Year" type="number" min="0" placeholder="Мінімальна волога за {{ year - 4 }}" style="width: 300px">
+</div>
+<br>
+<div class="div">
+    <h3>Атмосферний тиск (Паскаль)</h3>
+    <p>Введіть інформацію про зміну атмосферного тиску за останні 5 років</p>
+    <input name="maxPressureNow" type="number" min="0" placeholder="Максимальний атмосферний тиск за {{ year }}" style="width: 300px"><br>
+    <input name="minPressureNow" type="number" min="0" placeholder="Мінімальний атмосферний тиск за {{ year }}" style="width: 300px"><br>
+    <br>
+    <input name="maxPressureLast1Year" type="number" min="0" placeholder="Максимальний атмосферний тиск за {{ year - 1 }}" style="width: 300px"><br>
+    <input name="minPressureLast1Year" type="number" min="0" placeholder="Мінімальний атмосферний тиск за {{ year - 1 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxPressureLast2Year" type="number" min="0" placeholder="Максимальний атмосферний тиск за {{ year - 2 }}" style="width: 300px"><br>
+    <input name="minPressureLast2Year" type="number" min="0" placeholder="Мінімальний атмосферний тиск за {{ year - 2 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxPressureLast3Year" type="number" min="0" placeholder="Максимальний атмосферний тиск за {{ year - 3 }}" style="width: 300px"><br>
+    <input name="minPressureLast3Year" type="number" min="0" placeholder="Мінімальний атмосферний тиск за {{ year - 3 }}" style="width: 300px"><br>
+    <br>
+    <input name="maxPressureLast4Year" type="number" min="0" placeholder="Максимальний атмосферний тиск за {{ year - 4 }}" style="width: 300px"><br>
+    <input name="minPressureLast4Year" type="number" min="0" placeholder="Мінімальний атмосферний тиск за {{ year - 4 }}" style="width: 300px">
+</div>
+<br>
+<div class="div">
+    <h3>Кількість вуглекислого газу (СO₂) у мільйонній частці (ppm)</h3>
+    <p>Введіть інформацію про зміну вологи за останні 5 років</p>
+    <input name="avrgAmountCO2Now" type="number" placeholder="Середня кількість CO₂ за {{ year }}" style="width: 300px"><br>
+    <input name="avrgAmountCO2Last1Year" type="number" min="0" placeholder="Середня кількість CO₂ за {{ year - 1 }}" style="width: 300px"><br>
+    <input name="avrgAmountCO2Last2Year" type="number" min="0" placeholder="Середня кількість CO₂ за {{ year - 2 }}" style="width: 300px"><br>
+    <input name="avrgAmountCO2Last3Year" type="number" min="0" placeholder="Середня кількість CO₂ за {{ year - 3 }}" style="width: 300px"><br>
+    <input name="avrgAmountCO2Last4Year" type="number" min="0" placeholder="Середня кількість CO₂ за {{ year - 4 }}" style="width: 300px">
+</div>
+<br>
+<center>
+        <button type="submit">Отримати результат</button>
+</center>
+</form>
+
+{% endblock %}

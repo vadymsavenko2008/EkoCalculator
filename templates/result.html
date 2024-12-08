@@ -1,0 +1,66 @@
+{% extends 'main.html' %}
+
+{% block main %}
+
+<div class="div">
+    <h2>Результат</h2>
+    <p>Населений пункт: <b>{{ place }}</b></p>
+    
+    <h3>Температура</h3>
+    <p>Йдеться процесc: <b>{{ processTemp }}</b></p>
+    <p>Чи є це небезпекою?: <b>{{ dangerTemp }}</b></p>
+    <p>Причина процесу: {{ aboutTempProcess }}</p>
+    <p>Середня температура (°C) за {{ year }}: <b>{{ avrgTempNow }}</b></p>
+    <p>Середня температура (°C) за {{ year - 1 }}: <b>{{ avrgTempLast1Year }}</b></p>
+    <p>Середня температура (°C) за {{ year - 2 }}: <b>{{ avrgTempLast2Year }}</b></p>
+    <p>Середня температура (°C) за {{ year - 3 }}: <b>{{ avrgTempLast3Year }}</b></p>
+    <p>Середня температура (°C) за {{ year - 4 }}: <b>{{ avrgTempLast4Year }}</b></p>
+    <p>Зміна середньої температури (°C) {{ year - 1 }}-{{ year }}: <b>{{ changeTemp1 }}</b></p>
+    <p>Зміна середньої температури (°C) {{ year - 2 }}-{{ year - 1 }}: <b>{{ changeTemp2 }}</b></p>
+    <p>Зміна середньої температури (°C) {{ year - 3 }}-{{ year - 2 }}: <b>{{ changeTemp3 }}</b></p>
+    <p>Зміна середньої температури (°C) {{ year - 4 }}-{{ year - 3 }}: <b>{{ changeTemp4 }}</b></p>
+    
+    <h3>Волога</h3>
+    <p>Йдеться процесc: <b>{{ processMoisture }}</b></p>
+    <p>Чи є це небезпекою?: <b>{{ dangerMoisture }}</b></p>
+    <p>Причина процесу: {{ aboutMoistureProcess }}</p>
+    <p>Середня волога (%) за {{ year }}: <b>{{ avrgMoistureNow }}</b></p>
+    <p>Середня волога (%) за {{ year - 1 }}: <b>{{ avrgMoistureLast1Year }}</b></p>
+    <p>Середня волога (%) за {{ year - 2 }}: <b>{{ avrgMoistureLast2Year }}</b></p>
+    <p>Середня волога (%) за {{ year - 3 }}: <b>{{ avrgMoistureLast3Year }}</b></p>
+    <p>Середня волога (%) за {{ year - 4 }}: <b>{{ avrgMoistureLast4Year }}</b></p>
+    <p>Зміна середньої вологи (%) {{ year - 1 }}-{{ year }}: <b>{{ changeMoisture1 }}</b></p>
+    <p>Зміна середньої вологи (%) {{ year - 2 }}-{{ year - 1 }}: <b>{{ changeMoisture2 }}</b></p>
+    <p>Зміна середньої вологи (%) {{ year - 3 }}-{{ year - 2 }}: <b>{{ changeMoisture3 }}</b></p>
+    <p>Зміна середньої вологи (%) {{ year - 4 }}-{{ year - 3 }}: <b>{{ changeMoisture4 }}</b></p>
+    
+    <h3>Атмосферний тиск</h3>
+    <p>Йдеться процесc: <b>{{ processPressure }}</b></p>
+    <p>Чи є це небезпекою?: <b>{{ dangerPressure }}</b></p>
+    <p>Причина процесу: {{ aboutPressureProcess }}</p>
+    <p>Середній атмосферний тиск (Паскаль) за {{ year }}: <b>{{ avrgPressureNow }}</b></p>
+    <p>Середній атмосферний тиск (Паскаль) за {{ year - 1 }}: <b>{{ avrgPressureLast1Year }}</b></p>
+    <p>Середній атмосферний тиск (Паскаль) за {{ year - 2 }}: <b>{{ avrgPressureLast2Year }}</b></p>
+    <p>Середній атмосферний тиск (Паскаль) за {{ year - 3 }}: <b>{{ avrgPressureLast3Year }}</b></p>
+    <p>Середній атмосферний тиск (Паскаль) за {{ year - 4 }}: <b>{{ avrgPressureLast4Year }}</b></p>
+    <p>Зміна середнього атмосферного тиску (Паскаль) {{ year - 1 }}-{{ year }}: <b>{{ changePressure1 }}</b></p>
+    <p>Зміна середнього атмосферного тиску (Паскаль) {{ year - 2 }}-{{ year - 1 }}: <b>{{ changePressure2 }}</b></p>
+    <p>Зміна середнього атмосферного тиску (Паскаль) {{ year - 3 }}-{{ year - 2 }}: <b>{{ changePressure3 }}</b></p>
+    <p>Зміна середнього атмосферного тиску (Паскаль) {{ year - 4 }}-{{ year - 3 }}: <b>{{ changePressure4 }}</b></p>
+    
+    <h3>Кількість вуглекислого газу</h3>
+    <p>Йдеться процесc: <b>{{ processAmountCO2 }}</b></p>
+    <p>Чи є це небезпекою?: <b>{{ dangerAmountCO2 }}</b></p>
+    <p>Причина процесу: {{ aboutAmountCO2Process }}</p>
+    <p>Середня кількість CO₂ (ppm) за {{ year }}: <b>{{ avrgAmountCO2Now }}</b></p>
+    <p>Середня кількість CO₂ (ppm) за {{ year - 1 }}: <b>{{ avrgAmountCO2Last1Year }}</b></p>
+    <p>Середня кількість CO₂ (ppm) за {{ year - 2 }}: <b>{{ avrgAmountCO2Last2Year }}</b></p>
+    <p>Середня кількість CO₂ (ppm) за {{ year - 3 }}: <b>{{ avrgAmountCO2Last3Year }}</b></p>
+    <p>Середня кількість CO₂ (ppm) за {{ year - 4 }}: <b>{{ avrgAmountCO2Last4Year }}</b></p>
+    <p>Зміна середньої кількість CO₂ (ppm) {{ year - 1 }}-{{ year }}: <b>{{ changeAmountCO21 }}</b></p>
+    <p>Зміна середньої кількість CO₂ (ppm) {{ year - 2 }}-{{ year - 1 }}: <b>{{ changeAmountCO22 }}</b></p>
+    <p>Зміна середньої кількість CO₂ (ppm) {{ year - 3 }}-{{ year - 2 }}: <b>{{ changeAmountCO23 }}</b></p>
+    <p>Зміна середньої кількість CO₂ (ppm) {{ year - 4 }}-{{ year - 3 }}: <b>{{ changeAmountCO24 }}</b></p>
+</div>
+
+{% endblock %}
