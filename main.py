@@ -66,7 +66,7 @@ def result():
         processMoisture = "Зменшення"
     dangerMoisture = ""
     aboutMoistureProcess = ""
-    normalChangeMoisture = 3
+    normalChangeMoisture = 4
     if abs(changeMoisture1) >= normalChangeMoisture:
         dangerMoisture = "Так"
         if changeMoisture1 > 0:
@@ -125,7 +125,7 @@ def result():
         processAmountCO2 = "Зменшення"
     dangerAmountCO2 = ""
     aboutAmountCO2Process = ""
-    normalChangeAmountCO2 = 3
+    normalChangeAmountCO2 = 5
     if abs(changeAmountCO21) >= normalChangeAmountCO2:
         if changeAmountCO21 > 0:
             aboutAmountCO2Process = "Це може бути пов'язано зі збільшенням спалювання викопного палива, вирубкою лісів та зменшенням здатності рослин до поглинання CO₂. Наслідки включають посилення парникового ефекту, зміну клімату та підвищення середньої глобальної температури. Для зменшення рівня CO₂ слід: зменшити використання викопного палива, збільшити площу лісів, застосовувати екологічно чисті джерела енергії."
